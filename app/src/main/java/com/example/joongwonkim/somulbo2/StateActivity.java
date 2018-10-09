@@ -421,7 +421,8 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
         time.setMine(selectedMin);
         StateFragment sf = (StateFragment)getSupportFragmentManager().findFragmentByTag(StateFragment.TAG);
         sf.setTime(time);
-        dsdasdasdasda.sds
+
+        addafdfafafsdfsdfsdf
     }
 
 }
