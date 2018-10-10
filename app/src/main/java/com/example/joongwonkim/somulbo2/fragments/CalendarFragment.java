@@ -24,7 +24,6 @@ import java.text.SimpleDateFormat;
 public class CalendarFragment extends Fragment {
 
     public interface onSetDateListener{
-        void setDate();
 
         void setDate(String ss);
     }

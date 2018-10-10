@@ -10,18 +10,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-
-
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.TimePicker;
 
 import com.example.joongwonkim.somulbo2.data.Time;
 import com.example.joongwonkim.somulbo2.dbconnection.DownLoadTask;
@@ -31,18 +23,12 @@ import com.example.joongwonkim.somulbo2.fragments.ProfileFragment;
 import com.example.joongwonkim.somulbo2.fragments.StateFragment;
 import com.example.joongwonkim.somulbo2.fragmenttofragmentinterface.FragmentDataSendInterface;
 import com.example.joongwonkim.somulbo2.helper.BottomNavigationViewHelper;
-import com.example.joongwonkim.somulbo2.view.CalendarPickerView;
 
 
 public class StateActivity extends AppCompatActivity implements ChangePasswordDialog.Listener , CalendarFragment.onSetDateListener , FragmentDataSendInterface {
 
-    ViewPager viewPager;
-    LinearLayout sliderDotspanel;
-    TextView checkInTextS;
-    TextView checkInTextE;
+
     BottomNavigationView bottomNavigationView;
-    Button selectedLuggage;
-    Toolbar toolbar;
     boolean a;
     boolean b;
     boolean c;
@@ -51,26 +37,20 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
     ProfileFragment profileFragment;
 
     String temp;
-
-
-    Time timeS;
-    Time timeE;
-
     Time time;
 
 
-    private static Boolean isClicked = false;
 
-    int requestCode = 0;
 
-    private static final int TAKE_TO_SELECTED_LUGGAGE = 1;
-    private static final int TAKE_TO_CALENDARVIEW_RESULT = 0;
+//    int requestCode = 0;
+
+//    private static final int TAKE_TO_SELECTED_LUGGAGE = 2;
+//    private static final int TAKE_TO_CALENDARVIEW_RESULT = 1;
     private static final int TAKE_TO_PRAYGRROUND_RESULT = 0;
-//    private int dotscount;
-//    private ImageView[] dots;
+
 
     ProfileFragment mProfileFragment;
-    DownLoadTask downLoadTask;
+//    DownLoadTask downLoadTask;
 
     private static long sayBackPress;
 
@@ -92,47 +72,12 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_state_setting);
-        contact = findViewById(R.id.action_contact);
-        home = findViewById(R.id.action_home);
-        search = findViewById(R.id.action_search);
-        more = findViewById(R.id.action_more);
 
 
         time = new Time();
 
-
-
-
-
         LoadFragmentState();
         initView();
-
-
-
-
-
-
-
-
-
-
-
-
-//        DateConnection dateConnection = new DateConnection();
-
-
-
-
-//        setListener();
-
-//        MapViewFragmentNaver mapViewFragmentNaver = new MapViewFragmentNaver();
-//
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//
-//        transaction.replace(R.id.fragment_container,mapViewFragmentNaver);
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -147,6 +92,7 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
                         b = false;
                         c = false;
                         d = false;
+
 
                         if(a){
                             contact.setClickable(false);
@@ -320,13 +266,10 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_home);
 
-        //        viewPager = (ViewPager) findViewById(R.id.viewPager);
-//        sliderDotspanel = (LinearLayout) findViewById(R.id.SliderDots);
-//        checkInTextS = (TextView) findViewById(R.id.check_in_text_s);
-//        checkInTextE = (TextView) findViewById(R.id.check_in_text_e);
-//
-//        selectedLuggage = (Button) findViewById(R.id.luggage_select_button);
-//        setAdapter();
+        contact = (View) findViewById(R.id.action_contact);
+        home    = (View) findViewById(R.id.action_home);
+        search  = (View) findViewById(R.id.action_search);
+        more    = (View) findViewById(R.id.action_more);
 
 
 
@@ -384,12 +327,6 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
     }
 
     @Override
-    public void setDate() {
-
-
-    }
-
-    @Override
     public void setDate(String ss) {
         StateFragment sf = (StateFragment)getSupportFragmentManager().findFragmentByTag(StateFragment.TAG);
         sf.setDate(ss);
@@ -422,7 +359,7 @@ public class StateActivity extends AppCompatActivity implements ChangePasswordDi
         StateFragment sf = (StateFragment)getSupportFragmentManager().findFragmentByTag(StateFragment.TAG);
         sf.setTime(time);
 
-        addafdfafafsdfsdfsdf
+
     }
 
 }
